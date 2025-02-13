@@ -25,12 +25,12 @@
         .grid-container-offcanvas {
             flex: 0;
             background-color: white;
-            min-width: 350px; /*typical offcanvas width*/
+            min-width: 375px; /*typical offcanvas width*/
             height: 100dvh;
             /**/
             display: grid;
             grid-template-columns: .5fr .1fr .75fr .5fr .5fr;
-            grid-template-rows: 55px 80px 55px 15px 70px 70px repeat(2,1fr);
+            grid-template-rows: 70px 80px 55px 15px 60px 70px 235px auto;
             gap: 0;
         }
 
@@ -42,7 +42,7 @@
 
         .grid-item.header {
             background-color: white;
-            height: 55px;
+            height: 70px;
             padding: 0;
             margin: 0;
         }
@@ -114,7 +114,8 @@
             width: 70px;
             text-align: center;
             align-content: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
+            padding-bottom: 10%;
         }
 
         .grid-item.row5 {
@@ -134,18 +135,47 @@
         }
 
         .grid-item.row6 {
-            background-color: lightgray;
             grid-area: 6 / 1 / 7 / 4;
+            justify-content: left;
+        }
+
+        .profile-button {
+            width: 80%;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-left: 7.5%;
         }
 
         .grid-item.row7 {
             border-top: solid lightgray 1px;
             border-bottom: solid lightgray 1px;
             grid-area: 7 / 1 / 8 / -1;
+            justify-content: left;
+            align-items: start;
+        }
+
+        .list-group {
+            margin-top: 2.5%;
+            font-weight: 600;
+            font-size: 1.15rem;
+        }
+
+        .list-group > a {
+            border: none;
         }
 
         .grid-item.row8 {
             grid-area: 8 / 1 /9 / -1;
+            justify-content: left;
+            align-items: start;
+        }
+
+        .logout-button {
+            margin-top: 5%;
+            width: 90%;
+            margin-left: 5%;
+            font-size: 1.25rem;
+            font-weight: 600;
         }
 
     </style>
@@ -184,8 +214,21 @@
             <div class="grid-item row6">
                 <button type="button" class="btn btn-primary profile-button">View Profile</button>
             </div>
-            <div class="grid-item row7">7</div>
-            <div class="grid-item row8">8</div>
+            <div class="grid-item row7">
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item disabled list-label" aria-disabled="true">SETTINGS</a>
+                    <a href="#" class="list-group-item list-group-item-action">Avatar</a>
+                    <a href="#" class="list-group-item list-group-item-action">Notifications</a>
+                    <a href="#" class="list-group-item list-group-item-action">Security</a>
+                    <a href="#" class="list-group-item list-group-item-action">Sharing</a>
+                </div>
+            </div>
+            <div class="grid-item row8">
+                <button type="button" class="btn btn-danger logout-button">
+                    <i class="bi bi-box-arrow-right" style="font-size: 1.5rem;"></i>
+                    <label>Log Out</label>
+                    </button>
+            </div>
                 
         </div>
 
